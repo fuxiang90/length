@@ -33,8 +33,6 @@ class Length(object):
         fin.close()
         fout.close()
     def compute(self,eval_str):
-#        for each in self._legth_dict :
-#            eval_str = eval_str.replace(each )
         eval_list = eval_str.split(' ')
         new_eval_str = ""
         
@@ -45,36 +43,14 @@ class Length(object):
             _len = len(s)
             
 
-            #if s[_len-1] == 's':
-            #    s = s[:_len - 1]
-            #    len_s = len(s)
-                
-            #    if s != 'mile' and s[len_s -1] == 'e':
-            #        s = s[:len_s - 1]
-
-            #m =  re.match(r'[+-]?\d+$', s)
-            #flag = 0
-            #for each in s :
-            #    if 
-
-            #if m is None :
-            #try :
-
-            #    eval(s)
-            #expect:
-            #if type(eval(s)) != float and type(eval(s)) != int :  
             if s.isalpha(): 
-                #print s
 
                 unit_name = self._unit_dict.get(s,s)
                 eval_list[pos -1] = str(float(eval_list[pos - 1]) * self._legth_dict[unit_name]  )
 
                 eval_list[pos] = 'm'
-                #print eval_list[pos - 1]
-          
         eval_str = ' '.join(eval_list)             
         eval_str = eval_str.replace('m' ,' ')
-        #print eval_str
         return  eval(eval_str)
 
             
@@ -85,6 +61,6 @@ if __name__ == '__main__':
     test.run()
     
     
-    test.compute('0.15 yard')
      
     print "done it"
+
